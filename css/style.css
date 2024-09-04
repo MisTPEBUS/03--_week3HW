@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.google.com/specimen/Roboto?query=roboto");
+:root {
+  --primary-color: #9f1213;
+  --secondary-color: #fbf2f2;
+}
+* {
+  box-sizing: border-box;
+  /* outline: 1px solid #000; */
+}
+body {
+  font-family: "Roboto", "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: rgb(228, 134, 13);
+  }
+  &:active {
+    color: var(--primary-color);
+  }
+}
+
+.nav .container {
+  max-width: 348px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.nav {
+  padding: 0 12px;
+  background: var(--primary-color);
+}
+.footer {
+  background: var(--primary-color);
+  color: white;
+}
+.logo {
+  max-width: 80px;
+  width: 20%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.menu li {
+  border: 1px solid #fff;
+  width: 50%;
+  text-align: center;
+}
+.menu li a {
+  color: #ffffff;
+  font-size: 16px;
+}
+.qa-container {
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-top: 40px;
+  margin-bottom: 64px;
+}
+
+.subtitle {
+  border-left: 8px solid var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 32px;
+  font-weight: bold;
+  padding-left: 16px;
+}
+.fs-24-b {
+  font-size: 24px;
+  font-weight: bold;
+}
+.fs-20-b {
+  font-size: 20px;
+  font-weight: bold;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-6 {
+  margin-bottom: 24px;
+}
+.mb-10 {
+  margin-bottom: 40px;
+}
+.py-6 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.px-4 {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.mr-2 {
+  margin-right: 8px;
+}
+
+.hidden {
+  display: none;
+}
+.w-24p {
+  width: 24px;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.my-4 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.mr-3 {
+  margin-right: 12px;
+}
+.mr-12 {
+  margin-right: 48px;
+}
+.sm-hidden {
+  display: none;
+}
+.sm-d-flex {
+  display: flex;
+}
+.d-flex {
+  display: flex;
+}
+.footer-img {
+  width: 18px;
+}
+.mb-mr-8 {
+  margin-right: 32px;
+}
+@media (min-width: 576px) {
+  .nav .container {
+    max-width: 720px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .footer .container {
+    max-width: 720px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .qa-container {
+    max-width: 720px;
+    justify-content: start;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+  .logo {
+    align-self: center;
+    width: 80px;
+  }
+
+  .menu {
+    justify-content: end;
+    align-items: center;
+    width: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .menu li {
+    border: 0;
+    width: auto;
+    text-align: center;
+    margin-left: 64px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .fs-48 {
+    font-size: 48px;
+  }
+  .fs-16 {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 48px;
+    margin-top: 80px;
+    margin-bottom: 32px;
+  }
+  .md-mb-8 {
+    margin-bottom: 32px;
+  }
+  .w-24 {
+    width: 24px;
+  }
+  .hidden {
+    display: none;
+  }
+  .md-flex {
+    display: flex;
+  }
+  .md-hidden {
+    display: none;
+  }
+  .md-w-48p {
+    width: 48px;
+  }
+  .footer-img {
+    width: 36px;
+  }
+  .md-fs-36 {
+    font-size: 36px;
+  }
+  .mb-11 {
+    margin-bottom: 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav .container {
+    max-width: 1296px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .footer .container {
+    max-width: 1296px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .qa-container {
+    max-width: 1296px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .logo {
+    align-self: center;
+    width: 80px;
+  }
+
+  .menu {
+    justify-content: end;
+
+    flex-wrap: nowrap;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .menu li {
+    border: 0;
+
+    text-align: center;
+    margin-left: 64px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .md-my-8 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
