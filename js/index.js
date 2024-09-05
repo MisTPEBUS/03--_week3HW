@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
          } */
 
         if (page === 'home') {
-            url = '01_home.html';
+            url = '404.html';
         } else if (page === 'product') {
             url = '02_products.html';
         } else if (page === 'qa') {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             url = '404.html';
         }
-        url = '07_qa.html';
+
         fetch(url)
             .then(response => response.text())
             .then(html => {
