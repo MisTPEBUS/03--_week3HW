@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             url = '404.html';
         }
-
+        url = '07_qa.html';
         fetch(url)
             .then(response => response.text())
             .then(html => {
