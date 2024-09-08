@@ -5,21 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function loadPage(page) {
         let url = '';
-        /*  const pageURL = '';
-         switch (pageName) {
-             case 'home':
-                 pageURL = '07_qa.html';
-                 break;
-             case 'products':
-                 pageURL = '02_products.html';
-                 break;
-             case 'qa':
-                 pageURL = '07_qa.html';
-                 break;
-             case 'default':
-                 pageURL = '404.html';
-                 break;
-         } */
 
         if (page === 'home') {
             url = '404.html';
@@ -55,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadPage('qa');
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
     const qaComponents = document.querySelectorAll('.qa');
     console.log(qaComponents)
     qaComponents.forEach(component => {
@@ -66,4 +51,4 @@ document.addEventListener("DOMContentLoaded", function () {
             paragraph.innerHTML = text;
         });
     });
-});
+}); */
