@@ -133,6 +133,9 @@ a {
 .sm-hidden {
   display: none;
 }
+.sm-block {
+  display: block;
+}
 .sm-d-flex {
   display: flex;
 }
