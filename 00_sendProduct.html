@@ -49,7 +49,7 @@
       });
 
       // 呼叫後端 API 來建立訂單與取得藍新金流付款所需參數
-      fetch('https://foodiefund.onrender.com/api/create-order', {
+      fetch('https://foodiefund.onrender.com/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(productData)
@@ -82,7 +82,7 @@
           }
 
           document.body.appendChild(form);
-          /*  form.submit(); */
+          form.submit();
         })
         .catch(err => console.error('建立訂單錯誤:', err));
     });
