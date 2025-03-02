@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 
 <head>
   <meta charset="UTF-8">
@@ -7,38 +7,43 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 2em;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
+    .result-list {
+      margin-top: 1em;
+      padding: 0;
+      list-style: none;
+    }
+
+    .result-list li {
+      margin-bottom: 0.5em;
+    }
+
+    .result-list li span {
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>付款結果</h1>
-    <div id="result"></div>
+  <h1>付款結果</h1>
+  <div id="result">
+    <!-- 付款結果將顯示在此處 -->
   </div>
-
   <script>
-    // 解析 URL 查詢字串參數的函數
-    function getQueryParams() {
-      var params = {};
-      var queryString = window.location.search.substring(1);
-      var regex = /([^&=]+)=([^&]*)/g;
-      var m;
-      while (m = regex.exec(queryString)) {
-        params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-      }
-      return params;
-    }
+    // 取得 URL query 參數 (例如：?Status=SUCCESS&Amt=1000&MerchantOrderNo=ORDER123...)
+    const params = new URLSearchParams(window.location.search);
+    let resultHtml = '<h2>交易資訊：</h2><ul class="result-list">';
 
-    // 顯示查詢參數
-    const params = getQueryParams();
-    document.getElementById('result').textContent = JSON.stringify(params, null, 2);
+    // 將所有參數轉成清單呈現
+    for (const [key, value] of params.entries()) {
+      resultHtml += `<li><span>${key}</span>: ${value}</li>`;
+    }
+    resultHtml += '</ul>';
+
+    // 顯示結果
+    document.getElementById('result').innerHTML = resultHtml;
   </script>
 </body>
 
