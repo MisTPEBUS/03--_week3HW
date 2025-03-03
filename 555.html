@@ -27,9 +27,9 @@
   <!-- Container -->
   <div class="custom-container mx-auto p-4">
     <!-- 頂部固定區塊，使用 #4baac6 作為背景色 -->
-    <div id="cc" class="sticky top-0 bg-[#4baac6] z-50 p-2 px-4">
+    <div class="sticky top-0 bg-[#4baac6] z-50 p-2 px-4 flex justify-between ">
       <div class="flex items-center mb-4">
-        <h1 class="text-2xl font-bold text-white">掃墓公車行駛路線資訊</h1>
+        <h1 class="text-2xl font-bold text-white">掃墓公車路線資訊</h1>
         <input type="text" placeholder="搜尋"
           class="ml-4 pl-4 py-1 border border-[#03afb3] rounded-md focus:outline-none" />
       </div>
@@ -43,6 +43,9 @@
     <!-- 資料列表：手機版 1 欄、桌機版 2 欄 -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
       <!-- 15 筆測試資料 -->
+      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa] sm:hidden">
+        <div class="text-lg font-bold text-[#4baac6]">掃墓公車行駛動線服務導覽圖</div>
+      </div>
       <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
         <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【忠靈堂-南港軍人公墓】</div>
         <div class="mt-2"><span class="font-semibold">去程: </span>忠靈堂</div>
