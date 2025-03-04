@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>公車資訊</title>
-  <!-- 引入 Tailwind CSS CDN -->
+  <title>公車資訊 - React CDN 版本</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 自訂 container 寬度 -->
   <style>
-    /* 自訂 container 寬度：手機最大 400px，桌機最大 1296px */
     @media (max-width: 767px) {
       .custom-container {
         max-width: 400px;
@@ -21,104 +21,171 @@
       }
     }
   </style>
+  <!-- React CDN -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
 </head>
 
 <body class="bg-gray-100">
-  <!-- Container -->
-  <div class="custom-container mx-auto p-4">
-    <!-- 頂部固定區塊，使用 #4baac6 作為背景色 -->
-    <div class="sticky top-0 bg-[#4baac6] z-50 p-2 px-4 flex justify-between ">
-      <div class="flex items-center mb-4">
-        <h1 class="text-2xl font-bold text-white">掃墓公車路線資訊</h1>
-        <input type="text" placeholder="搜尋"
-          class="ml-4 pl-4 py-1 border border-[#03afb3] rounded-md focus:outline-none" />
-      </div>
-      <!-- 可選擇性顯示標題列（桌機顯示），內部以白底框線搭配 #03afb3 -->
-      <div class="hidden md:flex font-semibold mb-2">
-        <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-          <div class="text-lg font-bold text-[#4baac6]">掃墓公車行駛動線服務導覽圖</div>
-        </div>
-      </div>
-    </div>
-    <!-- 資料列表：手機版 1 欄、桌機版 2 欄 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-      <!-- 15 筆測試資料 -->
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa] sm:hidden">
-        <div class="text-lg font-bold text-[#4baac6]">掃墓公車行駛動線服務導覽圖</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【忠靈堂-南港軍人公墓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>忠靈堂</div>
-        <div><span class="font-semibold">返程: </span>南港軍人公墓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【南港軍人公墓-忠靈堂】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>南港軍人公墓</div>
-        <div><span class="font-semibold">返程: </span>忠靈堂</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【南港軍人公墓-富德靈骨樓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>南港軍人公墓</div>
-        <div><span class="font-semibold">返程: </span>富德靈骨樓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【崇德街-富德公墓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>崇德街</div>
-        <div><span class="font-semibold">返程: </span>富德公墓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【惇敍工商-陽明山靈骨塔】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>惇敍工商</div>
-        <div><span class="font-semibold">返程: </span>陽明山靈骨塔</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【捷運動物園-富德靈骨樓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>捷運動物園</div>
-        <div><span class="font-semibold">返程: </span>富德靈骨樓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【捷運麟光站-富德公墓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>捷運麟光站</div>
-        <div><span class="font-semibold">返程: </span>富德公墓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【富德公墓-南港軍人公墓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>富德公墓</div>
-        <div><span class="font-semibold">返程: </span>南港軍人公墓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【富德公墓-崇德街】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>富德公墓</div>
-        <div><span class="font-semibold">返程: </span>崇德街</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【富德公墓-富德靈骨樓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>富德公墓</div>
-        <div><span class="font-semibold">返程: </span>富德靈骨樓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【富德靈骨樓-南港軍人公墓】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>富德靈骨樓</div>
-        <div><span class="font-semibold">返程: </span>南港軍人公墓</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【富德靈骨樓-捷運動物園站】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>富德靈骨樓</div>
-        <div><span class="font-semibold">返程: </span>捷運動物園站</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【陽明山靈骨塔-惇敍工商】</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>陽明山靈骨塔</div>
-        <div><span class="font-semibold">返程: </span>惇敍工商</div>
-      </div>
-      <div class="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]">
-        <div class="text-lg font-bold text-[#03afb3]">掃墓公車-【萬福橋-富德靈骨樓】公車站牌</div>
-        <div class="mt-2"><span class="font-semibold">去程: </span>萬福橋</div>
-        <div><span class="font-semibold">返程: </span>富德靈骨樓</div>
-      </div>
+  <div id="root"></div>
+  <!--  Babel 轉譯 JSX -->
+  <script type="text/babel">
+    const cards = [
+      {
 
-    </div>
-  </div>
+        title: "掃墓公車行駛動線服務導覽圖",
+        url: "SAOMUBUS_00.jpg",
+        mobileOnly: true, // 手機版（sm:hidden）卡片
+      },
+      {
+
+        title: "掃墓公車-【忠靈堂-南港軍人公墓】",
+        details: ["去程: 忠靈堂", "返程: 南港軍人公墓"],
+        url: "SAOMUBUS_01.jpg",
+      },
+      {
+
+        title: "掃墓公車-【南港軍人公墓-忠靈堂】",
+        details: ["去程: 南港軍人公墓", "返程: 忠靈堂"],
+        url: "SAOMUBUS_02.jpg",
+      },
+      {
+
+        title: "掃墓公車-【南港軍人公墓-富德靈骨樓】",
+        details: ["去程: 南港軍人公墓", "返程: 富德靈骨樓"],
+        url: "SAOMUBUS_03.jpg",
+      },
+      {
+
+        title: "掃墓公車-【崇德街-富德公墓】",
+        details: ["去程: 崇德街", "返程: 富德公墓"],
+        url: "SAOMUBUS_04.jpg",
+      },
+      {
+
+        title: "掃墓公車-【惇敍工商-陽明山靈骨塔】",
+        details: ["去程: 惇敍工商", "返程: 陽明山靈骨塔"],
+        url: "SAOMUBUS_05.jpg",
+      },
+      {
+
+        title: "掃墓公車-【捷運動物園-富德靈骨樓】",
+        details: ["去程: 捷運動物園", "返程: 富德靈骨樓"],
+        url: "SAOMUBUS_06.jpg",
+      },
+      {
+
+        title: "掃墓公車-【捷運麟光站-富德公墓】",
+        details: ["去程: 捷運麟光站", "返程: 富德公墓"],
+        url: "SAOMUBUS_07.jpg",
+      },
+      {
+
+        title: "掃墓公車-【富德公墓-南港軍人公墓】",
+        details: ["去程: 富德公墓", "返程: 南港軍人公墓"],
+        url: "SAOMUBUS_08.jpg",
+      },
+      {
+
+        title: "掃墓公車-【富德公墓-崇德街】",
+        details: ["去程: 富德公墓", "返程: 崇德街"],
+        url: "SAOMUBUS_09.jpg",
+      },
+      {
+
+        title: "掃墓公車-【富德公墓-富德靈骨樓】",
+        details: ["去程: 富德公墓", "返程: 富德靈骨樓"],
+        url: "SAOMUBUS_10.jpg",
+      },
+      {
+
+        title: "掃墓公車-【富德靈骨樓-南港軍人公墓】",
+        details: ["去程: 富德靈骨樓", "返程: 南港軍人公墓"],
+        url: "SAOMUBUS_11.jpg",
+      },
+      {
+
+        title: "掃墓公車-【富德靈骨樓-捷運動物園站】",
+        details: ["去程: 富德靈骨樓", "返程: 捷運動物園站"],
+        url: "SAOMUBUS_12.jpg",
+      },
+      {
+
+        title: "掃墓公車-【陽明山靈骨塔-惇敍工商】",
+        details: ["去程: 陽明山靈骨塔", "返程: 惇敍工商"],
+        url: "SAOMUBUS_13.jpg",
+      },
+      {
+
+        title: "掃墓公車-【萬福橋-富德靈骨樓】公車站牌",
+        details: ["去程: 萬福橋", "返程: 富德靈骨樓"],
+        url: "SAOMUBUS_14.jpg",
+      },
+    ];
+
+    const App = () => {
+      // 點擊卡片後導向指定 URL
+      const handleClick = (url) => {
+        window.location.href = `image/${url}`;
+      };
+
+      return (
+        <div className="custom-container mx-auto p-4">
+          {/* 頂部固定區塊 */}
+          <div className="sticky top-0 bg-[#4baac6] z-50 p-2 px-4 flex justify-between">
+            <div className="flex items-center mb-4">
+              <h1 className="text-2xl font-bold text-white">掃墓公車路線資訊</h1>
+              <input
+                type="text"
+                placeholder="搜尋"
+                className="ml-4 pl-4 py-1 border border-[#03afb3] rounded-md focus:outline-none"
+              />
+            </div>
+            {/* 桌機版標題 */}
+            <div className="hidden md:flex font-semibold mb-2">
+              <div
+                className="cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa]"
+                onClick={() => handleClick("00.jpg")}
+              >
+                <div className="text-lg font-bold text-[#4baac6]">
+                  掃墓公車行駛動線服務導覽圖
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 手機版 1 欄、桌機版 2 欄 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                className={`cursor-pointer border border-[#03afb3] rounded-lg p-4 bg-white shadow hover:bg-[#e0f7fa] ${card.mobileOnly ? "sm:hidden" : ""
+                  }`}
+                onClick={() => handleClick(card.url)}
+              >
+                <div
+                  className={`text-lg font-bold ${card.mobileOnly ? "text-[#4baac6]" : "text-[#03afb3]"
+                    }`}
+                >
+                  {card.title}
+                </div>
+                {card.details &&
+                  card.details.map((line, index) => (
+                    <div key={index} className={index === 0 ? "mt-2" : ""}>
+                      <span className="font-semibold">{line.split(":")[0] + ": "}</span>
+                      {line.split(":")[1]}
+                    </div>
+                  ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
 </body>
 
 </html>
