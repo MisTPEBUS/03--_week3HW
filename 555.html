@@ -126,6 +126,17 @@
 
     const App = () => {
       // 點擊卡片後導向指定 URL
+      const [search, setSearch] = React.useState("");
+
+      const filterCards = card.filter(card => {
+        const searchLower = search.toLowerCase();
+        const titleMatch = card.title.toLowerCase().includes(searchLower);
+        const detailsMatch = card.details
+          ? card.details.some(detail => detail.toLowerCase().includes(searchLower))
+          : false;
+        return titleMatch || detailsMatch;
+      });
+
       const handleClick = (url) => {
         window.location.href = `image/${url}`;
       };
